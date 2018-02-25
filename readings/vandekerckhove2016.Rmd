@@ -1,0 +1,46 @@
+# C. S. Peirce on the Crisis of Confidence and the "No More Bets" Heuristic
+
+Joachim Vandekerckhove and Eric-Jan Wagenmakers
+
+---
+
+Many scientific disciplines find themselves in the midst of a "crisis of confidence," where key empirical findings turn out to reproduce at an alarmingly low rate [^1] [^2] [^3] [^4]. The causes for the crisis are multifaceted and there does not appear to be a single silver-bullet solution. Nevertheless, some insight can be gained by considering two rules proposed by Charles Sanders Peirce almost 150 years ago [^5] [^6]. These rules are prerequisites for the proper evaluation of any scientific hypothesis using empirical data. 
+
+The first rule concerns the need for strictly confirmatory research [^7]:
+
+: **Peirce's first rule.** The hypothesis should be distinctly put as a question, before making the observations which are to test its truth. In other words, we must try to see what the result of predictions from the hypothesis will be [^6] (emphasis ours).
+
+In yet other words: hypotheses cannot be tested using the same data that were used to generate the hypotheses in the first place [^8].
+
+The second rule we consider here concerns the need to publish findings independently of their outcome:
+
+: **Peirce's second rule.** The failures as well as the successes of the predictions must be honestly noted. The whole proceeding must be fair and unbiased [^6] (emphasis ours).
+
+The contrast between Peirce's rules and current scientific practice is striking. In violation of the first rule, researchers often do not indicate in advance what specific predictions are to be tested. This means that reviewers and readers cannot assess the extent to which the data constitute a true test (i.e., prediction) or a false test (i.e., postdiction). Hindsight bias and confirmation bias make such an assessment problematic even for the original authors themselves; as Richard Feynman famously observed: "you must not fool yourself---and you are the easiest person to fool" [^9].
+
+In violation of the second rule, statistically nonsignificant findings are widely suppressed and underrepresented [^10]. This phenomenon, known as publication bias, is endemic at multiple levels. At the institutional level, editors may explicitly instruct authors to develop a compelling narrative and avoid the apparent contradiction that results from a mixed set of significant and nonsignificant results. At the individual level, authors may anticipate or share editors' preferences and suppress such ambiguous results. The presence of publication bias is sometimes assessed post hoc with statistical tests [^11]; the issue is both contentious and complicated. 
+
+Most researchers will agree that Peirce's rules are sensible, and that violating them will bias the published literature in such a way that honest replication attempts will often fail to reproduce the original findings. Nevertheless, these same researchers may be unaware that their own work almost always violates Peirce's rules.
+
+To increase awareness we propose a simple heuristic that individual researchers can use to determine for themselves whether their work adheres or violates Peirce's rules. The following heuristic provides researchers with a correct intuition about exploratory analyses and publication bias, and may help reduce its influence at the individual level:
+
+: **The No More Bets heuristic.** For every set of observations, the publication decision must be made prior to inspection of the observations themselves.
+
+This heuristic applies both to data points and outcomes of hypothesis tests, and requires only that authors "buy in" to their experimental methods in advance (i.e., failure to find effects cannot be due to faulty methods or flawed design). Consistent with Peirce's first rule, a personal commitment to publish the outcome of a specific hypothesis test is made a priori; consistent with Peirce's second rule, the decision to publish is made regardless of the outcome. Deciding to publish, in this context, means that the researchers commit to making these data and hypothesis tests visible to the academic public---typically as part of a manuscript or other scientific communication.
+
+Once individual researchers start to adopt the "no more bets" heuristic for personal use, it is only a small step to claim credit for one's predictions by preregistering data analysis plans (e.g., on the [Open Science Framework](osf.io) or on AsPredicted.org) or engaging in a registered report [^12]. In registered reports, articles receive "in-principle acceptance" based on an initial review of the methods in advance of data collection. A second phase of review serves only to decide whether the proposed methods were followed.
+
+Presently, the no more bets heuristic is applied implicitly only in fields that enforce preregistration (e.g., certain medical clinical trials). Strict application of the heuristic attends researchers to the fact that their work may violate key scientific desiderata and may pave the way to preregistration and the publication of results independent of the outcome. In line with the old rules from Peirce, such a new way of conducting research will prove an essential component in the struggle for research that is both informative and reproducible. 
+
+[^1]: Pashler, H., & Wagenmakers, E.-J. (2012). Editors' introduction to the special section on replicability in psychological science a crisis of confidence? *Perspectives on Psychological Science, 7,* 528-530. 
+[^2]: Eds. (2016). Editorial: Reality check on reproducibility. *Nature, 533,* p. 437. doi:10.1038/533437a
+[^3]: Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. *Science, 349(6251),* aac4716.
+[^4]: Yong, E. (May 16, 2012). Replication studies: Bad copy. *Nature News.* Available [here](http://www.nature.com/news/replication-studies-bad-copy-1.10634).
+[^5]: Hartshorne, C., & Weiss, P. (eds.) (1932). *Collected papers of Charles Sanders Peirce: Volume II: Elements of logic.* Cambridge: Harvard University Press.
+[^6]: Peirce, C. S. (1878). Deduction, induction, and hypothesis. *Popular Science Monthly, 13,* 470-482.
+[^7]: De Groot, A. D. (1956/2014). The meaning of "significance" for different types of research. Translated and annotated by Eric-Jan Wagenmakers, Denny Borsboom, Josine Verhagen, Rogier Kievit, Marjan Bakker, Angelique Cramer, Dora Matzke, Don Mellenbergh, and Han L. J. van der Maas. *Acta Psychologica, 148,* 188-194.
+[^8]: Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Maas, H.L.J., & Kievit, R.A. (2012). An agenda for purely confirmatory research. *Perspectives on Psychological Science, 7,* 632-638.
+[^9]: Feynman, R. P. (1974). Cargo cult science. *Engineering and Science, 37,* 10-13.
+[^10]: Sterling, T. D., Rosenbaum, W., & Weinkam, J. (1995). Publication decisions revisited: The effect of the outcome of statistical tests on the decision to publish and vice versa. *The American Statistician, 49,* 108-112.
+[^11]: Francis, G. (2013). Replication, statistical consistency, and publication bias. *Journal of Mathematical Psychology, 57,* 153-169.
+[^12]: Chambers, C. D. (2013) Registered Reports: A new publishing initiative at Cortex. *Cortex, 49,* 609-610.
