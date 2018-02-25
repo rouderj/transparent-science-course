@@ -45,7 +45,7 @@ There are many little decisions that people must make in performing research. Th
 
 - **Discuss** --- Vandekerckhove, J., & Wagenmakers, E.-J. (2016). C. S. Peirce on the Crisis of Confidence and the "No More Bets" Heuristic. *The Winnower, 4843.* Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/vandekerckhove2016.pdf).
  
-- **Discuss** --- Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2017). *The Preregistration Revolution.* Available [here](osf.io/2dxu5).
+- **Discuss** --- Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2017). *The Preregistration Revolution.* Available [here](https://osf.io/2dxu5).
 
 - **Read** --- Corker, K. (2016). *So you want to pre-register a study.* Available [here](https://scienceofpsych.wordpress.com/2016/02/05/so-you-want-to-pre-register-a-study/).
 
