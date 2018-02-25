@@ -29,7 +29,7 @@ Updated: Ohio State revokes PhD of co-author of now-retracted paper on shooter v
 
 - **Read** --- Wicherts, J., Borsboom, D., Kats, J., & Molenaar, D. (2006). The poor availability of psychological research data for reanalysis. *American Psychologist, 61(7),* 726-728. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/wicherts2006.pdf).
 
-- **Read** --- Sutcliffe, K. M. (2001). High reliability organizations. *Best Practice & Research Clinical Anaesthesiology, 25(2),* 133-144. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/sutcliffe2001.pdf).
+- **Read** --- Sutcliffe, K. M. (2011). High reliability organizations. *Best Practice & Research Clinical Anaesthesiology, 25(2),* 133-144. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/sutcliffe2011.pdf).
 
 - **Write** (due next week) --- *My high reliability lab.* --- Each lab has practices that fall under the umbrella "highly reliable organizations."  Write a well-organized and formatted document about how some of the practices in your lab meet the principles and how they do not. 500 words max.
 
