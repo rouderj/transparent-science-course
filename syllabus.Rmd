@@ -27,9 +27,9 @@ Updated: Ohio State revokes PhD of co-author of now-retracted paper on shooter v
 
 - **Read** --- Yudhijit Bhattacharjee (on Diederik Stapel), The mind of a con man. *New York Times.* Available [here](http://www.nytimes.com/2013/04/28/magazine/diederik-stapels-audacious-academic-fraud.html?pagewanted=all).
 
-- **Read** --- Wicherts, J., Borsboom, D., Kats, J., & Molenaar, D. (2006). The poor availability of psychological research data for reanalysis. *American Psychologist, 61(7),* 726-728. Available [here](http://psycnet.apa.org/record/2006-12925-016).
+- **Read** --- Wicherts, J., Borsboom, D., Kats, J., & Molenaar, D. (2006). The poor availability of psychological research data for reanalysis. *American Psychologist, 61(7),* 726-728. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/wicherts2006.pdf).
 
-- **Read** --- Sutcliffe, K. M. (2001). High reliability organizations. *Best Practice & Research Clinical Anaesthesiology, 25(2),* 133-144. Available [here](https://ac.els-cdn.com/S1521689611000334/1-s2.0-S1521689611000334-main.pdf?_tid=ae5cb78c-c8cc-11e7-9e84-00000aacb35d&acdnat=1510616888_d35036482e58ef4f8990431da0b9c396).
+- **Read** --- Sutcliffe, K. M. (2001). High reliability organizations. *Best Practice & Research Clinical Anaesthesiology, 25(2),* 133-144. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/sutcliffe2001.pdf).
 
 - **Write** (due next week) --- *My high reliability lab.* --- Each lab has practices that fall under the umbrella "highly reliable organizations."  Write a well-organized and formatted document about how some of the practices in your lab meet the principles and how they do not. 500 words max.
 
