@@ -1,0 +1,109 @@
+---
+title: Dispute over shooter video games may kill recent paper
+author: Victoria Stern, Retraction Watch
+---
+
+# Dispute over shooter video games may kill recent paper
+
+Can playing first-person shooter video games train players to become better marksmen?
+
+---
+
+A 2012 paper ---titled "Boom, Headshot!" --- presented evidence to suggest that was, in fact, true. But after enduring heavy fire from critics (one of whom has long argued video games have little lasting impact on users), the authors are planning to retract the paper, citing some irregularities with the data. Although the journal has apparently agreed to publish a revised version of the paper, last year the researchers' institution decided to launch a misconduct investigation against one of the two co-authors.
+
+Brad Bushman, a professor of communication and psychology at the Ohio State University, headed the research along with then-postdoc Jodi Whitaker, now an assistant professor at the University of Arizona.
+
+According to a recent email from the editor of Communication Research to two critics of the paper, the retraction notice will look something like this: 
+
+> The editors of Communication Research, Drs. Gibbs and Knobloch-Westerwick, wish to issue a retraction of the article entitled "‘Boom, Headshot!': Effect of Video Game Play and Controller Type on Firing Aim and Accuracy by Jodi L. Whitaker and Brad J. Bushman, published in the October 2014 issue of Communication Research. We have retracted this article at the request of Drs. Markey (Villanova U) and Elson (Ruhr U Bochum), in agreement with the corresponding author Dr. Bushman. A Committee of Initial Inquiry at Ohio State University recommended retracting this article after being alerted to irregularities in some variables of the data set by Drs. Markey and Elson in January 2015. Unfortunately, the values of the questioned variables could not be confirmed because the original research records were unavailable. In 2016, they sent their report to Dr. Gibbs, one of the editors of Communication Research, who decided that a retraction was warranted. A replication of the study by Dr. Bushman is forthcoming.
+
+However, the journal wouldn't confirm the retraction is taking place. Editor Jennifer Gibbs, communications professor at the University of California, Santa Barbara, told us:
+
+> This fall, I received a detailed report that documented data irregularities in the study, and presented re-analyses of the data that showed that the main findings would not have held up without these irregularities. With this information, the co-editors and I are currently in the process of determining what our formal response to the study will be in strict compliance with COPE guidelines.
+
+Those two mentioned outside researchers --- Patrick Markey, psychology professor at Villanova University and Malte Elson, a behavioral psychology postdoc at Ruhr University Bochum in Germany --- started questioning the results when Markey noticed statistical inconsistencies that suggested the data were positively skewed. The duo recently posted a timeline of their communications with the authors, journal, and OSU over the last few years.
+
+Markey told us:
+
+> The reason why I asked about this statistical issue was not that I was skeptical, but because the reported findings seemed so important.
+
+Where Bushman has found video games and violent media can lead to increases in aggression and violence, Markey is the opposite: He argues that studies suggest violent video games have little lasting effect. Indeed, Markey has co-authored a book about research into violent video games to be published next year. The title: Moral Combat: Why the War on Violent Video Games is Wrong.
+
+Bushman has claimed that the push to retract the paper was a smear campaign. In a  Feb. 22, 2015  email to Jennifer Yucel, director of the Office of Research Compliance at OSU, Bushman wrote:
+
+> ... I believe Dr. Markey has an ulterior motive for going after me and my former Ph.D. student Jodi Whitaker --- he wants to discredit my research and ruin my reputation.
+
+After Markey and Elson raised allegations to OSU, a panel concluded on Oct. 15, 2015 that there was sufficient evidence to warrant a misconduct investigation into Whitaker, but not Bushman. Co-author Whitaker did not respond to an email request from Retraction Watch.
+
+When we reached out to Bushman, we received a response from Jeff Grabmeier, senior director of research communications at OSU, who wouldn't confirm whether or not an investigation was ongoing, citing federal confidentiality laws:
+
+> However, we can report that Dr. Bushman has completed a replication of the "Boom, Headshot" study with a new and larger sample. This paper has received a "revise and resubmit" decision from Communication Research, the same journal that published the original study.
+
+Another one of Bushman's papers --- "Effects of Violent Media on Verbal Task Performance in Gifted and General Cohort Children" --- has generated a long discussion on PubPeer, during which a commenter who signs off as Bushman posts he's shared the original dataset.
+
+However, the original data appeared to raise more questions. A commenter marked "author" says he is trying to reach his colleagues in Turkey --- based at Fatih University, which was closed this year by the government --- then finally notes he plans to retract the paper, with this notice:
+
+> Questions have been raised about the pattern of results in the Cetin, Wai, Altay, and Bushman (2016) article. Unfortunately, the data collection procedures could not be verified because the author who collected the data (Cengiz Altay) could not be contacted following the attempted coup in Turkey. Therefore, as the integrity of the data could not be confirmed, we are retracting the study.
+
+Bushman also published a correction in July 14, 2016, to his 2010 Psychological Science paper entitled "Like a Magnet: Catharsis Beliefs Attract Angry People to Violent Video Games," citing some data inconsistencies.
+
+OSU spokesman Grabmeier explained the correction in an email:
+
+> Of the four data points where the published data did not exactly match the calculated result, three of the discrepancies are due to completely valid rounding of the reported value. The fourth instance was a simple and relatively minor error and it did not demonstrably change the reported findings.
+
+Markey and Elson --- now a member of the Society for the Improvement of Psychological Science, which aims to improve the quality of the literature in the field --- were initially disappointed by the journal's response to their concerns, but they told us in a joint statement that new editor Gibbs:
+
+> ... responded promptly, and immediately took action when we informed her of our findings. This was indeed a very uplifting experience for us.
+
+Still, it's been a long process, they added:
+
+> We definitely had our ups and downs during the whole process, to a point where we considered just dropping it.
+
+---
+
+# Updated: Ohio State revokes PhD of co-author of now-retracted paper on shooter video games
+
+A researcher who co-authored a paper about video games that was retracted earlier this year has had her PhD from The Ohio State University revoked.
+
+As WOSU reported this afternoon, the vote today of the university’s Board of Trustees was unanimous. The scheduled vote on whether to revoke Jodi Whitaker’s degree was first reported yesterday by The Columbus Dispatch.
+
+While a graduate student at Ohio State, Whitaker was co-author of a paper that claimed to find that first-person shooter video games improved marksmanship. As we’ve reported, the paper, published online in 2012, was retracted earlier this year, two years after a university committee was alerted to irregularities in the data by two outside researchers.
+
+The controversy over the paper became heated at times. Whitaker’s PhD supervisor, Brad Bushman, was cleared by Ohio State of misconduct, but claimed at one point that the paper’s critics — Patrick Markey, a psychology professor at Villanova University and Malte Elson, a behavioral psychology postdoc at Ruhr University Bochum in Germany — were engaging in a smear campaign. But Bushman agreed to the retraction. (He also agreed to the retraction of another paper not co-authored by Whitaker earlier this year following questions by Joe Hilgard, a postdoc at the University of Pennsylvania.)
+
+The Dispatch explains Ohio State’s process for revoking a degree:
+
+> Typically, a university committee investigates allegations of academic misconduct. That committee can then recommend to the executive vice president and provost that a degree be revoked, and if the provost concurs, the recommendation goes to the board of trustees.
+
+OSU spokespeople told the Dispatch and Retraction Watch yesterday:
+
+> Student education records, including records related to academic misconduct and information about the misconduct that could lead to the identification of individual students, are protected under the federal Family Educational Rights and Privacy Act (FERPA), and cannot be shared by the university.
+
+> Brad Bushman is a professor of communication in good standing at Ohio State.  In the case of the retracted 2014 study (“Boom, Headshot!”: Effect of Video Game Play and Controller Type on Firing Aim and Accuracy. Communication Research, Vol 41(7):879-891) the university determined that there was no evidence that Bushman participated in, or was aware of, inappropriate data manipulation. Therefore, the university found that the allegations brought against Bushman did not have sufficient substance to warrant an investigation and they were dismissed.
+
+[See update at end.]
+
+In a joint statement to Retraction Watch today, Markey and Elson questioned Ohio State’s findings:
+
+> Throughout the investigation and retraction process, our goals have always been to correct the scientific record. We are deeply saddened to hear that this might lead to the end of a fellow scientist’s career.
+
+> There were two authors on the problematic “Boom, Headshot!” study. That the female, junior researcher is found culpable for those problems while the male, senior researcher is not, seems questionable.  During the investigation pertaining to the article in question, we discovered two different data files on the senior author’s computer between which the codes for variables were altered.  These alterations occurred in a manner which supported the original study’s hypotheses. Additionally, the authors of the original study were unable to provide the raw data in order to confirm which data file was correct.
+
+> Ultimately, we will never know exactly what error produced the discrepancies between these files. However, we believe that all researchers involved in a particular project are responsible for the outcome of the said project. This is especially true in cases when a senior author is the mentor of a junior researcher.  We are pleased that the outcome of this investigation has been to retract a manuscript containing potentially erroneous findings, but are disheartened by the decision, by all parties involved, to lay the blame for these errors at the feet of a single member of a multi-person research team.
+
+Whitaker, now an assistant professor of communication at the University of Arizona, has not responded to a request for comment.
+
+Jake Harwood, the chair of Arizona’s communication department, told Retraction Watch yesterday that the university is aware of the situation, and of the retraction earlier this year. Asked whether revocation of Whitaker’s PhD would affect her employment at the university, he said he could not comment on personnel issues.
+
+It is unclear how often PhDs are revoked, but it seems rare. In one case we’ve been covering, the University of Texas, Austin, has been blocked — at least for now — from taking away the PhD of a chemist who the university said falsified data.
+
+---
+
+Update, 1400 UTC, 8/28/17: Bushman provided us with a copy of the letter in which OSU said he had been exonerated of misconduct. Read it [here](http://retractionwatch.com/wp-content/uploads/2017/08/20160312-Bushman-letter.pdf).
+
+---
+
+[Co-author of now-retracted paper about video games apparently demoted to “lecturer” by uni
+](https://retractionwatch.com/2017/10/03/co-author-now-retracted-paper-video-games-apparently-demoted-lecturer-uni/)
+
+[After losing two video game-violence papers, co-author’s weapons paper is flagged](https://retractionwatch.com/2017/11/20/losing-two-video-game-violence-papers-co-authors-weapons-paper-flagged/)

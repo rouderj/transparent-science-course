@@ -1,0 +1,87 @@
+---
+title: Here's How A Controversial Study About Kids And Cookies Turned Out To Be Wrong --- And Wrong Again
+date: October 18, 2017, at 3:15 p.m.
+author: Stephanie M. Lee, BuzzFeed News Reporter
+output: pdf_document
+---
+# Here's How A Controversial Study About Kids And Cookies Turned Out To Be Wrong --- And Wrong Again
+Cornell University professor Brian Wansink claimed that he'd found a way to get kids aged 8 to 11 to choose fruit over junk food. But the research was actually done on toddlers. 
+
+---
+Last month, a controversial study about the food choices of elementary school students was retracted for statistical errors and replaced with a new analysis. But the updated version is also seriously flawed, undermining the study's premise, BuzzFeed News has learned. 
+
+Originally published in JAMA Pediatrics in 2012, the study found that children were more likely to choose apples over cookies during lunch when the apples had a sticker of Elmo. Both the original and the replacement claimed that the study included 208 students "ranging from 8 to 11 years old" at seven schools in upstate New York. 
+
+But, as confirmed to BuzzFeed News by the leader of the study, Cornell University professor Brian Wansink, the data was actually collected while observing kids 3 to 5 years old.
+
+"We made a mistake in the age group we described in the JAMA article. We mistakenly reported children ranging from 8 to 11 years old; however, the children were actually 3 to 5 years old," Wansink told BuzzFeed News by email. 
+
+After discovering the mistake last week, Wansink added, he asked for the article to be retracted.
+
+"We just learned that the study was indeed conducted with preschool children, not 8-11 year old children and are considering the appropriate next steps," JAMA Pediatrics Editor Frederick Rivara told BuzzFeed News by email on Wednesday.
+
+What's more, emails obtained by BuzzFeed News via public records requests suggest that another paper by this research team, a study about carrots published in Preventive Medicine in 2012, looked at kids in preschools while claiming to be about older children. Wansink did not answer any questions about this study.
+
+These age discrepancies matter because both studies are touted as evidence for the Smarter Lunchrooms Movement, the $22 million, federally funded program that gives advice to nearly 30,000 elementary, middle, and high schools about how to get kids to choose healthy foods.
+
+The errors are only the latest in a slew of scientific misconduct allegations facing at least 50 of Wansink's studies. Journals have so far retracted three papers (including the first retraction of the apples study) and corrected at least seven.
+
+"The Smarter Lunchrooms Movement is all about influencing the choice that children make," Nicholas Brown, a graduate student at the University of Groningen in the Netherlands and one of Wansink's loudest critics, told BuzzFeed News.
+
+"If a daycare worker is standing over a 3-year-old and saying, ‘Now Tommy, do you want a cookie or an apple?', it doesn't tell us anything about how 8- or 9-year-olds are going to react when we offer them a choice."
+
+Brown flagged this age issue in a letter sent to Rivara on Wednesday and shared with BuzzFeed News.
+
+"We are taking the questions raised about Professor Wansink's work quite seriously," Cornell Vice President for University Relations Joel Malina told BuzzFeed News through a spokesperson.
+
+"The University is undertaking timely and appropriate action, in compliance with our internal policies and any external regulations that may apply."
+
+---
+
+Brown first became suspicious of the apples study earlier this year, after he and two other researchers unearthed 150 errors in four of Wansink's papers about pizza consumption. 
+
+Brown thought the apples study was fishy, too: Would 11-year-olds really pick something because it had an Elmo sticker? "That wouldn't be my choice of character," he said. 
+
+In the letter he sent to Rivara, Brown pointed out that the revised study's data spreadsheet included comments such as "no snack, didn't wake up" and "picked neither was feeling sick after nap" --- behaviors that sounded more like kids in a daycare or preschool rather than an elementary school. 
+
+Brown also noticed that the comments seemed to contradict the study's statement that "each child's choice was unobtrusively recorded" by researchers. One child "told me what he wanted before he saw the options," one of the data-enterers wrote. Another "knew he wanted sticker before snacktime" and yet another "wanted to switch to apple halfway through the cookie." 
+
+Some of the entries in the apples study spreadsheet were originally made by a woman named Jen Loveland, who is now known as Jen Neubauer and runs a company that recommends wine. In an interview, Neubauer confirmed that she worked in Wansink's Food and Brand Lab as a Cornell undergraduate from 2007 to 2009, and handed out food and inputted data for the apples study.
+
+"From what I remember, they were Head Start programs," she said when asked what kinds of schools she visited for the study. Head Start is a federally subsidized education program, based in schools, child care centers, and other institutions, for low-income children up to 5 years old.
+
+Neubauer was not involved in writing up the study. She remembers visiting one school with kids around 10 to 14 years old. "But I think for the most part it was younger children," she said, adding, "I'd say an average of like, maybe, 5."
+
+Although the apples study reported that the researchers observed students from a distance as they picked out their lunches, Neubauer said that she and the other Cornell staffers who accompanied her interacted with the children. "We were definitely handing them out to the kids directly," she said.
+
+Although Wansink told BuzzFeed News that his team "discovered this mistake last week," he has frequently referred to studying young kids in published articles and emails obtained by BuzzFeed News.
+
+In the original version of the study, for example, he and his co-authors concluded, "Just as attractive names have been shown to increase the selection of healthier foods in school lunchrooms, brands and cartoon characters can do the same with preliterate children." In the new version, "preliterate children" was replaced with "young children."
+
+In a 2013 editorial, Wansink wrote, "Even putting an Elmo sticker on apples led 70% more daycare kids to take and eat an apple instead of a cookie," naming the study in the footnotes.
+
+He repeated the claim, though with a different number, in a 2015 article: "Even putting an Elmo sticker on apples led to 46% more daycare children taking and eating an apple instead of a cookie."
+
+In private correspondence, Wansink has made similar references to the children in both the apples study and the carrots study. The latter summarized two experiments at seven elementary schools in New York in 2011, including a group of 147 children "ranging from 8 to 11 years old." It found that giving vegetables names like "X-ray Vision Carrots" led more children to choose them.
+
+This study, published in Preventive Medicine, was supposed to be corrected, as BuzzFeed News previously reported. But the journal's editor, Eduardo Franco, told BuzzFeed News by email that that correction is now "on hold until the journal has the opportunity to assess the new request for the change in age."
+
+When he first started getting questioned about the apples and carrots studies, Wansink emailed a few collaborators. He informed them that the two food-naming papers "under siege" were missing data that needed to be found. "They were probably done with those different Daycares around Ithaca," he added in the February 21 email.
+
+A few weeks later, Wansink replied to an email from Eric Robinson, a behavioral scientist at the University of Liverpool, who had brought up several apparent inconsistencies in the carrots study. Among several concerns, Robinson asked why the number of carrots that the students did and didn't eat failed to add up to the number they'd put on their plates.
+
+"As you know with your study about elementary school kids and carrots, not all end up in mouths or on the tray," Wansink responded in the March 11 email. "Preschoolers are even worse."
+
+And on July 2, Wansink sent an ex-collaborator an apparently unpublished draft of a paper discussing both the apples and carrots studies. The paper described the carrots study like this: "Study 2 examined whether preschoolers increased the choice likelihood and consumption of a healthy food (e.g., carrots) by attractively labeling it (both verbally and with a sign) as "X-ray Vision Carrots." The draft also cited the researchers' "discussions with preschools" in figuring out how to set up the experiments.
+
+One potential reason for the disconnect between what Wansink said happened in the apples study and what actually happened: He wasn't there.
+
+From November 2007 to January 2009, he took a leave of absence from Cornell and moved to Washington DC, where he served as the executive director for the USDA's Center for Nutrition Policy and Promotion. He explained this to the JAMA Pediatrics editor in a June 22 email, as his team was trying to correct the original study, which was carried out in the spring of 2008.
+
+"Neither David nor I were at any of the sessions, and Collin was only at some," he wrote, referring to David Just and Collin Payne, the other two co-authors on the paper. "What do we put down under the question as to who supervised this?"
+
+That led to some back-and-forth between the collaborators over whether Payne should be held responsible for the data analysis. (Just and Payne did not respond to requests for comment.) Eventually, though, Wansink decided that the responsibility was his.
+
+"I'm very sorry, Collin, that I hurt you. I certainly wouldn't have done that if I would have thought twice," he wrote. "This continued pressure and feeling of abandonment (schools, journals, people, etc.) clouded my judgement."
+
+---
