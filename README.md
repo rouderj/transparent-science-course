@@ -67,7 +67,9 @@ Every lab encounters the clutter of having multiple, evolving versions of work p
 
 #### Week 6. **Working With Collaborators** (Vandekerckhove)
 
-Working with collaborators is hard because they change our awesome text.  How do you work constructively, productively, and mistake free with people you kind of resent having to talk to?
+Working with collaborators is hard because they change our awesome text.  How do you work constructively, productively, and mistake free with people you kind of resent having to talk to? What makes an interesting collaboration?
+
+- **Read** --- Watts, D. (2017). Should social science be more solution-oriented? *Nature Human Behavior, 1*, 15.
 
 - **Write** --- *The latest in automation.* --- Place your paper (from Week 4) on Overleaf. Write a git script to make changes to text and figures. Place your analysis on CodeOcean and run it.
 
