@@ -69,7 +69,7 @@ Every lab encounters the clutter of having multiple, evolving versions of work p
 
 Working with collaborators is hard because they change our awesome text.  How do you work constructively, productively, and mistake free with people you kind of resent having to talk to? What makes an interesting collaboration?
 
-- **Read** --- Watts, D. (2017). Should social science be more solution-oriented? *Nature Human Behavior, 1*, 15.
+- **Read** --- Watts, D. (2017). Should social science be more solution-oriented? *Nature Human Behavior, 1*, 15. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/watts2017.pdf).
 
 - **Write** --- *The latest in automation.* --- Place your paper (from Week 4) on Overleaf. Write a git script to make changes to text and figures. Place your analysis on CodeOcean and run it.
 
