@@ -61,23 +61,23 @@ The traditional document has been thought of as output.  We find that sometimes 
 
 - **Write** --- *Powered by the cloud.* --- Place some data on OSF. Write an Rmd, Swv, or similar document that pulls data from OSF and produces some output for them that is integrated into a text. The exact analysis or text are not important.
 
-#### Week 5. **Versioning: git push** (Rouder)
+#### Week 5. **Computational Lab Skills: Linux/SQL/Python/Bash** (Vandekerckhove)
+
+Computers don't make mistakes; people do.  So never ask a person to do a dumb, repetitive task when a computer can do it better!  This lecture is about working with scripts to automate tasks.
+
+- **Write** --- *GUIs? We don't need no stinkin' GUIs!* --- Write a script to pull your paper off Overleaf, add the current time and date, render it to PDF, and upload the finished file to OSF and back to Overleaf.
+
+#### Week 6. **Versioning: git push** (Rouder)
 
 Every lab encounters the clutter of having multiple, evolving versions of work products.  How do you deal with versioning?  We present different version strategies including the gold standard --- git.
 
-#### Week 6. **Working With Collaborators** (Vandekerckhove)
+#### Week 7. **Working With Collaborators** (Vandekerckhove)
 
 Working with collaborators is hard because they change our awesome text.  How do you work constructively, productively, and mistake free with people you kind of resent having to talk to? What makes an interesting collaboration?
 
 - **Read** --- Watts, D. (2017). Should social science be more solution-oriented? *Nature Human Behavior, 1*, 15. Available [here](https://github.com/rouderj/transparent-science-course/blob/master/readings/watts2017.pdf).
 
 - **Write** --- *The latest in automation.* --- Place your paper (from Week 4) on Overleaf. Write a git script to make changes to text and figures. Place your analysis on CodeOcean and run it.
-
-#### Week 7. **Computational Lab Skills: Linux/SQL/Python/Bash** (Vandekerckhove)
-
-Computers don't make mistakes; people do.  So never ask a person to do a dumb, repetitive task when a computer can do it better!  This lecture is about working with scripts to automate tasks.
-
-- **Write** --- *GUIs? We don't need no stinkin' GUIs!* --- Write a script to pull your paper off Overleaf, add the current time and date, render it to PDF, and upload the finished file to OSF and back to Overleaf.
 
 #### Weeks 8--9. **Relational Databases** (Rouder)
 
