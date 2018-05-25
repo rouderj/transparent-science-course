@@ -1,23 +1,25 @@
 ---
-title           : "Recollective experience in recognition: A replication of Gardiner and Java (1990)"
-shorttitle      : "Replication of Gardiner and Java (1990)"
+title           : "Robustness of the subliminal cue effect: A planned preregistered meta-analysis"
+shorttitle      : "subliminal cues - rubust or not (interrobang)"
 date            : "`r Sys.setlocale('LC_TIME', 'C'); format(Sys.time(), '%d\\\\. %B %Y')`"
 
 author: 
-  - name        : Julia Haaf
+  - name        : Stephen Bennett
     affiliation : 1
-  - name        : Stephen Rhodes
+  - name        : Gabriel Estrella
+    affiliation : 1
+  - name        : Mac Strelioff
+    affiliation : 1
+  - name        : Joachim Vandekerckhove
     affiliation : 1
   - name        : Jeffrey Rouder
-    affiliation : 1, 2
+    affiliation : 1
+  
 
 affiliation:
   - id          : 1
-    institution : University of Missouri
-  - id          : 2
     institution : University of California, Irvine
     
-bibliography      : "../lab.bib"
 output: prereg::cos_prereg
 ---
 
@@ -29,41 +31,11 @@ output: prereg::cos_prereg
 
 ## Research questions
 
+We aim to test whether the subliminal cue effect is robust to typical variation in experimental methods that might occur from labratory to labratory. Such variation typifies the sorts of generalizing to the real world. In general, is it the case that subliminal effects can substantively influence behavior?
 
-In the literature on memory there is disagreement on the processes underlying recognition. Dual process theorists propose that recognition decisions can be done on the basis of recollection, that is, reinstatement of the context in which the item was studied, or familiarity, that is, a sense that the information was previously encountered without the accompanying contextual details. These processes have been mapped onto the phenomenological sensation of 'remembering' a specific event versus 'knowing' that it occurred. In contrast, single process models propose that these sensations reflect the same process, just different levels of memory strength. These single process models have been effective in reproducing effects that have been considered strong evidence for two processes.
-
-Gardiner and Java (1990) report remember/know/new data that heavily favor the dual process account. In their Experiment 2, participants (N=20) studied 15 words and 15 non-words and, following a 24 hour delay, their memory was tested with an old/ new recognition procedure (30 old, 30 new items). Crucially, for items classified as old Gardiner and Java required participants to make an additional classification. Participants were instructed to respond "remember" when they could recall specific contextual details, or respond "know" when they simply felt like they had encountered the item. Their data (their Figure 2) demonstrated a clear cross over interaction, such that words elicited far more "remember" responses, whereas non-words elicited more "know" responses. Importantly, the frequency of "remember" and "know" responses did not differ between unstudied (new) words and non-words.  
-
-The cross over interaction for old items in conjunction with a lack of effect for new items is highly constraining for theories of recognition and strongly favor a dual process model. Given their potential theoretical significance, the present study aims to replicate the findings of Gardiner and Java [-@Gardiner:Java:1990].
+It may be the case that these effects are restricted to some subset of the space of possible experimental methods. For instance, it may require a particular mask and cue contrast, mask duration, interval duration, and/or mask symbols. We aim to test the finding from (Reuss et al. 2015) that such an effect exists by thoroughly running through the space of all possible experiments.
 
 ## Models
-
-Gardiner and Java (1990) first hypotheses, denoted $H_1$, is that *remember* responses would be more prevalent for old words than old non-words.  Their second hypothesis, $H_2$, is that *know* responses would be more prevalent for old non-words than for old words.  Though not explicitly hypothesized, they found no effect of item type (word vs. non-word), and we call this relationship $H_3$.  These three hypotheses are not exclusive; Gardiner and Java claim all were born out in their data.
-
-Unfortunately, $H_1$ and $H_2$ are not independent.  There is negative correlation because any endorsement of a *remember* response necessarily implies a lack of endorsement of a *know* response. This negative correlation was not accounted for by Gardiner and Java.  The failure to do so strikes us as a substantial error in need or redress.
-
-We find the specification of *models* to be more precise and more informative than the specification of *hypotheses*.  We start with data representation.  Let $r_{ij}$, $k_{ij}$, and $n_{ij}$ denote the number of *remember*, *know* and *new* responses, respectively for the $i$th participant and $j$ stimulus, $i=1,\ldots,I$ and $j=1,\ldots,4$, where the 4 conditions are old words, old non-words, new words, and new non-words, respectively.  To account for the negative correlation, we consider the relative difference between remember and know responses, or $Y_{ij}=(r_{ij} - k_{ij})/(r_{ij}+k_{ij} + n_{ij})$.  
-
-The most general model, what we called the *unconstrained model*, is 
-\[
-M_u: \quad Y_{ij}\sim\mbox{Normal}(\mu_j,\sigma^2).
-\]
-
-The Gardiner \& Java hypotheses can be instantiated with the following restrictions:
-\[
-M_0: \quad \mu_1 > 0, \; \mu_2 < 0, \; \mu_3=\mu_4.
-\]
-
-In addition to the unconstrained model, we propose the following alternatives to competitively test $M_0$ against.  
-\[
-\begin{aligned}
-M_1: \quad &\mu_1 = \mu_2, \; \mu_3=\mu_4.\\
-M_2: \quad &\mu_1 > \mu_2, \; \mu_3 > \mu_4.\\
-M_3: \quad &\mu_1 < \mu_2, \; \mu_3 < \mu_4.
-\end{aligned}
-\]
-
-Model $M_1$ captures the case that word/non-word status has no effect on the relative difference; Model $M_2$ captures the case that words whether old or new enhance remember responses over know responses through a criteria effect; Model $M_3$ captures the opposite case that non-words whether old or new enhance remember responses over know responses through a criteria effect.  The unconstrained model captures these relations as well as all others.
 
 
 # Sampling Plan
