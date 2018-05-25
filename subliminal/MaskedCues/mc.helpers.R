@@ -1,0 +1,5 @@
+source('loc.table.R')
+source('aov.table.R')
+source('aov.plot.R')
+source('rec.text.R')
+source('sql.text.R')
