@@ -49,7 +49,7 @@ output: html_document
 
 # Let's use R to add an experiment.
 
-```{r}
+```{r, eval=FALSE}
 library('RMySQL')
 
 insertSession <- function(expID,personID,computerID) {
@@ -81,12 +81,12 @@ insertSession <- function(expID,personID,computerID) {
 ```
 
 Make a Session
-```{r}
-sessionID=insertSession(1,1,1)
+```{r eval=FALSE}
+sessionID=insertSession(1,3,1)
 ```
 
 Made some data!
-```{r}
+```{r eval=FALSE}
 insertData <- function(sessionID,cond,score) {
 
   con <- dbConnect(MySQL(),
@@ -115,7 +115,7 @@ insertData <- function(sessionID,cond,score) {
 ```
 
 Main loop
-```{r}
+```{r eval=FALSE}
 condLabel=c("neutral","congruent","incongruent")
 condMu=c(80,60,100)
 condInt=rep(1:3,each=10)
@@ -123,7 +123,7 @@ cond=condLabel[condInt]
 score=round(rnorm(length(condInt),condMu[condInt],15),1)
 
 for (i in 1:length(condInt)){
-  insertData(sessionID,cond[i],score[i])
+  insertData(5,cond[i],score[i])
 }
 
 ```
@@ -132,13 +132,13 @@ for (i in 1:length(condInt)){
 
 Let's look at scores by hair color.
 
-```{r}
+```{r eval=FALSE}
 db <- dbConnect(MySQL(), user='class',password='class',dbname='class',host='127.0.0.1')
 
 
 myScores=dbGetQuery(db,
-"SELECT * from data
-JOIN session.sessionID on data.sessionID=session.sessionID
+"SELECT data.score, person.haircolor from data
+JOIN session on data.sessionID=session.sessionID
 JOIN person on session.personID=person.personID")
 dbDisconnect(db) 
 ```

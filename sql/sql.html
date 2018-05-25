@@ -181,10 +181,9 @@ $(document).ready(function () {
 </div>
 <div id="lets-use-r-to-add-an-experiment." class="section level1">
 <h1>Let’s use R to add an experiment.</h1>
-<pre class="r"><code>library('RMySQL')</code></pre>
-<pre><code>## Warning: package 'RMySQL' was built under R version 3.4.1</code></pre>
-<pre><code>## Loading required package: DBI</code></pre>
-<pre class="r"><code>insertSession &lt;- function(expID,personID,computerID) {
+<pre class="r"><code>library('RMySQL')
+
+insertSession &lt;- function(expID,personID,computerID) {
 
   con &lt;- dbConnect(MySQL(),
          user=&quot;class&quot;, password=&quot;class&quot;,
@@ -247,6 +246,18 @@ score=round(rnorm(length(condInt),condMu[condInt],15),1)
 for (i in 1:length(condInt)){
   insertData(sessionID,cond[i],score[i])
 }</code></pre>
+</div>
+<div id="reading-and-joining" class="section level1">
+<h1>Reading and Joining</h1>
+<p>Let’s look at scores by hair color.</p>
+<pre class="r"><code>db &lt;- dbConnect(MySQL(), user='class',password='class',dbname='class',host='127.0.0.1')
+
+
+myScores=dbGetQuery(db,
+&quot;SELECT data.score, person.haircolor from data
+JOIN session on data.sessionID=session.sessionID
+JOIN person on session.personID=person.personID&quot;)
+dbDisconnect(db) </code></pre>
 </div>
 
 
