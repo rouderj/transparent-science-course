@@ -1,6 +1,6 @@
 ---
 title             : "Great Title"
-shorttitle        : "Is Short"
+shorttitle        : "Big Short"
 
 author: 
   - name          : "Jeffrey N. Rouder"
