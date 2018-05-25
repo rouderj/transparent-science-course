@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Math Symbols:
+
+%Expectation Value, Variance, Cov  (non italicized inside math)
+\def\E{\mbox{E}}
+\def\Var{\mbox{Var}}
+\def\Cov{\mbox{Cov}}
+
+%Implications:
+%\suf is for sufficient or implies
+%\nec is for necessary or is implied by
+\def\suf{\Longrightarrow}
+\def\nec{\Longleftarrow}
+\def\notsuf{\Longrightarrow \! \! \! \! \! \! \! \! \! /}
+
+%Arrows
+\def\to{\rightarrow}
+
+%Not in or \nin
+\def\nin{\in\!\!\!\!\!\!/ \;}
+
+
+%MATH BOLD FACE COMMANDS
+\def\bfalpha  {\bm \alpha}
+\def\bfbeta   {\bm \beta}
+\def\bfgamma  {\bm \gamma}
+\def\bfdelta  {\bm \delta}
+\def\bfepsilon{\bm \epsilon}
+\def\bfvarepsilon{\bm \varepsilon}
+\def\bfzeta   {\bm \zeta}
+\def\bfeta    {\bm \eta}
+\def\bftheta  {\bm \theta}
+\def\bfiota   {\bm \iota}
+\def\bfkappa  {\bm \kappa}
+\def\bflambda {\bm \lambda}
+\def\bfmu     {\bm \mu}
+\def\bfnu     {\bm \nu}
+\def\bfxi     {\bm \xi}
+\def\bfomicron{\bm \omicron}
+\def\bfpi     {\bm \pi}
+\def\bfrho    {\bm \rho}
+\def\bfsigma  {\bm \sigma}
+\def\bftau    {\bm \tau}
+\def\bfupsilon{\bm \upsilon}
+\def\bfphi    {\bm \phi}
+\def\bfpsi    {\bm \psi}
+\def\bfchi    {\bm \chi}
+\def\bfomega  {\bm \omega}
+
+\def\bfAlpha  {\bm \Alpha}
+\def\bfBeta   {\bm \Beta}
+\def\bfGamma  {\bm \Gamma}
+\def\bfDelta  {\bm \Delta}
+\def\bfEpsilon{\bm \Epsilon}
+\def\bfZeta   {\bm \Zeta}
+\def\bfEta    {\bm \Eta}
+\def\bfTheta  {\bm \Theta}
+\def\bfIota   {\bm \Iota}
+\def\bfKappa  {\bm \Kappa}
+\def\bfLambda {\bm \Lambda}
+\def\bfMu     {\bm \Mu}
+\def\bfNu     {\bm \Nu}
+\def\bfXi     {\bm \Xi}
+\def\bfOmicron{\bm \Omicron}
+\def\bfPi     {\bm \Pi}
+\def\bfRho    {\bm \Rho}
+\def\bfSigma  {\bm \Sigma}
+\def\bfTau    {\bm \Tau}
+\def\bfUpsilon{\bm \Upsilon}
+\def\bfPhi    {\bm \Phi}
+\def\bfChi    {\bm \Chi}
+\def\bfOmega  {\bm \Omega}
+
+\def\bfA{\bm A}
+\def\bfB{\bm B}
+\def\bfC{\bm C}
+\def\bfD{\bm D}
+\def\bfE{\bm E}
+\def\bfF{\bm F}
+\def\bfG{\bm G}
+\def\bfH{\bm H}
+\def\bfI{\bm I}
+\def\bfJ{\bm J}
+\def\bfK{\bm K}
+\def\bfL{\bm L}
+\def\bfM{\bm M}
+\def\bfN{\bm N}
+\def\bfO{\bm O}
+\def\bfP{\bm P}
+\def\bfQ{\bm Q}
+\def\bfR{\bm R}
+\def\bfS{\bm S}
+\def\bfT{\bm T}
+\def\bfU{\bm U}
+\def\bfV{\bm V}
+\def\bfW{\bm W}
+\def\bfX{\bm X}
+\def\bfY{\bm Y}
+\def\bfZ{\bm Z}
+
+\def\bfa{\bm a}
+\def\bfb{\bm b}
+\def\bfc{\bm c}
+\def\bfd{\bm d}
+\def\bfe{\bm e}
+\def\bff{\bm f}
+\def\bfg{\bm g}
+\def\bfh{\bm h}
+\def\bfi{\bm i}
+\def\bfj{\bm j}
+\def\bfk{\bm k}
+\def\bfl{\bm l}
+\def\bfm{\bm m}
+\def\bfn{\bm n}
+\def\bfo{\bm o}
+\def\bfp{\bm p}
+\def\bfq{\bm q}
+\def\bfr{\bm r}
+\def\bfs{\bm s}
+\def\bft{\bm t}
+\def\bfu{\bm u}
+\def\bfv{\bm v}
+\def\bfw{\bm w}
+\def\bfx{\bm x}
+\def\bfy{\bm y}
+\def\bfz{\bm z}
+
+\def\bfzero{\bm 0}
+\def\bfone{\bm 1}
+
+
+\def\calM{{\cal M}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Environments:
+
+%Equation-Sequence Environment
+%Uses both Numbers and Letters in Equation numbers 2a, 2b, 2c, etc.
+% Example:
+%   \begin{eqs}
+%   a & = &b\\ \next
+%   b & = &c
+%   \end{eqnseq}
+
+\newcounter{eqnalph}
+\renewcommand{\theequation}{\arabic{equation}\alph{eqnalph}}
+
+\newenvironment{eqs}{\begin{eqnarray} \stepcounter{eqnalph}}{\end{eqnarray}
+  \setcounter{eqnalph}{0}\ignorespacesafterend}
+\newcommand{\next}{\addtocounter{equation}{-1} \stepcounter{eqnalph}}
+
+%Equation environments
+\newenvironment{eq}{\begin{equation}}{\end{equation} \ignorespacesafterend}
+\newenvironment{eqa}{\begin{eqnarray}}{\end{eqnarray}\ignorespacesafterend}
+\newenvironment{eqa*}{\begin{eqnarray*}}{\end{eqnarray*}\ignorespacesafterend}
+
+
