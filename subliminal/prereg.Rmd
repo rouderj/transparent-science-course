@@ -37,6 +37,9 @@ It may be the case that these effects are restricted to some subset of the space
 
 ## Models
 
+Model 1: Evaluating for which parts of the experimental space there is a masked-cues-influence-behavior effect.
+
+Model 2: Evaluating for which parts of the experimental space the masked cues are subliminal.
 
 # Sampling Plan
 
