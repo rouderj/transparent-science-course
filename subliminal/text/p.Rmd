@@ -1,0 +1,51 @@
+---
+title             : "Great Title"
+shorttitle        : "Is Short"
+
+author: 
+  - name          : "Jeffrey N. Rouder"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : ""
+    email         : "jrouder@uci.edu"
+  - name          : "Julia M. Haaf"
+    affiliation   : "2"
+
+
+affiliation:
+  - id            : "1"
+    institution   : "University of California, Irvine"
+
+
+
+author_note: We are indebted to Joachim for being such a great gopher.
+
+note: Version 1, 5/2018
+
+abstract: "Hmmm"
+
+
+  
+keywords          : "Are just words"
+
+bibliography      : ["lab.bib"]
+
+header-includes   :
+   - \usepackage{bm}
+   - \usepackage{amsmath}
+   - \usepackage{setspace}
+   - \usepackage{pcl}
+
+figsintext        : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+
+lang              : "english"
+class             : "man"
+output            : papaja::apa6_pdf
+csl               : apa6.csl
+---
+
+Hi Class
