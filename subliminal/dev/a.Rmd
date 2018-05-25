@@ -1,0 +1,10 @@
+---
+title: "First Analysis"
+author: "Gabe"
+output: html_document
+---
+lOADING THE DATA
+```{r load data, cache=TRUE}
+dat=read.csv(url('https://osf.io/28ahk/download'),head=T)
+dim(dat)
+```
