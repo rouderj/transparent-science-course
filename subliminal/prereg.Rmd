@@ -1,4 +1,4 @@
----
+----
 title           : "Robustness of the subliminal cue effect: A planned preregistered meta-analysis"
 shorttitle      : "subliminal cues - rubust or not (interrobang)"
 date            : "`r Sys.setlocale('LC_TIME', 'C'); format(Sys.time(), '%d\\\\. %B %Y')`"
@@ -38,6 +38,15 @@ We aim to test whether the subliminal cue effect is robust to typical variation 
 
 It may be the case that these effects are restricted to some subset of the space of possible experimental methods. For instance, it may require a particular mask and cue contrast, mask duration, interval duration, and/or mask symbols. We aim to test the finding from (Reuss et al. 2015) that such an effect exists by thoroughly running through the space of all possible experiments and assessing when subliminal cues facilitate target identification.
 
+## Data
+
+We use data from (Baribault et al., 2018) which conducted the set of possible experiments varying the many possible covariates.
+
+# Data cleaning
+
+In order to ensure that participants are indeed performing the task as specified, we will remove timings less then 250 milliseconds or greater than 2,000 milliseconds. Additionally, because there are likely substantial difference as participants acclimate to the task, we will remove the first trial of each block and the first block.
+
+
 ## Experimental questions
 
 Q1: When (i.e. under which covariates) does the masked cue increase or decrease response times in the target-clicking task?
@@ -48,9 +57,6 @@ Q3: Is there a set of covariates for which subliminal cues impact target-clickin
 
 We will explore the various co-variates in the design and how they impact Q1 and Q2. In particular, we expect significant overlap between explicit (i.e. non-subliminal) cues and cues that impact reaction time in the target-clicking task.
 
-## Data cleaning
-
-In order to ensure that participants are indeed performing the task as specified, we will remove timings less then 250 milliseconds or greater than 2,000 milliseconds. Additionally, because there are likely substantial difference as participants acclimate to the task, we will remove the first trial of each block and the first block.
 
 # Analysis Plan
 <!-- You may describe one or more confirmatory analysis in this section. Remember, all analyses specified in this section must be reported in the final article, and any additional analyses must be clearly labeled as exploratory or hypothesis generating in the final paper. A confirmatory analysis plan must state up front which variables are predictors (independent) and which are the outcomes (dependent), otherwise it is an exploratory analysis.
