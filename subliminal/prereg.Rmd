@@ -37,15 +37,20 @@ It may be the case that these effects are restricted to some subset of the space
 
 ## Experimental questions
 
-Q1: When is there a masked-cues-influence-behavior effect?
+Q1: When (i.e. under which covariates) does the masked cue increase or decrease response times in the target-clicking task?
 
 Q2: When are masked cues are subliminal?
 
-We will explore the various co-variates in the design and how they impact Q1 and Q2. In particular, 
+Q3: Is there a set of covariates for which subliminal cues impact target-clicking reaction time?
+
+We will explore the various co-variates in the design and how they impact Q1 and Q2. In particular, we expect significant overlap between explicit (i.e. non-subliminal) cues and cues that impact reaction time in the target-clicking task.
 
 ## Data cleaning
 
 Remove timings less then 250 milliseconds
+Remove timings greater than 2,000 milliseconds
+Take out the first trial of every block
+Take out the first block
 
 # Analysis Plan
 <!-- You may describe one or more confirmatory analysis in this section. Remember, all analyses specified in this section must be reported in the final article, and any additional analyses must be clearly labeled as exploratory or hypothesis generating in the final paper. A confirmatory analysis plan must state up front which variables are predictors (independent) and which are the outcomes (dependent), otherwise it is an exploratory analysis.
@@ -53,6 +58,8 @@ Remove timings less then 250 milliseconds
 You may describe exploratory analyses in this section, but a clear confirmatory analysis is required. An exploratory test is any test where a prediction is not made up front, or there are multiple possible tests that you are going to use. A statistically significant finding in an exploratory test is a great way to form a new confirmatory hypothesis, which could be registered at a later time.
 
 To help you keep track of multiple analyses, you may label each for your reference. -->
+
+In order to assess whether a covariate impacts reaction times, we will compute Bayesian t-tests to observe if the data support the null or alternative hypothesis.
 
 We intend to use the Bayes factor approach to assessing equalities and inequalities as described in Haaf & Rouder (in press) and Rouder & Haaf (submitted). 
 
@@ -77,232 +84,6 @@ Such considerations only make sense in the Neyman-Fisher statistical framework. 
 <!-- How will you determine what data or samples, if any, to exclude from your analyses? How will outliers be handled? -->
 
 If the session is terminated (either by the participant or for technical reasons) the whole data set will be excluded. We have no set lower bound of performance, but we reserve the right to do exclude low-performing participants on an exploratory basis.  We do so with regards to the overall accuracy and explicitly not the accuracy-by-condition data.
-
-## Missing data
-<!-- How will you deal with incomplete or missing data? -->
-
-Any missing will be replaced by recruiting additional participants (up to a total of 50).
-
-
-
-
-## Exploratory analyses (optional)
-<!-- If you plan to explore your data set to look for unexpected differences or relationships, you may describe those tests here. An exploratory test is any test where a prediction is not made up front, or there are multiple possible tests that you are going to use. A statistically significant finding in an exploratory test is a great way to form a new confirmatory hypothesis, which could be registered at a later time. -->
-
-We do not have a set analysis script for the exploratory EVSD analysis. The script will look something like the one below. The data used here is from the graph for experiment 2 from Gardiner and Java [-@Gardiner:Java:1990].
-
-```{r eval = F}
-dat2=matrix(ncol=2,byrow=T,c(
-.28,.16,
-.19,.30,
-.03,.12,
-.04,.11))
-
-new=1-apply(dat2,1,sum)
-dat=cbind(dat2,new)
-colnames(dat)=c("Rem","Know","New")
-rownames(dat)=c("oldW","oldNW","newW","newNW")
-
-
-pred=function(par)
-{
-oldW=diff(pnorm(c(-Inf,par[3:4],Inf),par[1],1))
-oldNW=diff(pnorm(c(-Inf,par[5:6],Inf),par[2],1))
-newW=diff(pnorm(c(-Inf,par[3:4],Inf),0,1))
-newNW=diff(pnorm(c(-Inf,par[5:6],Inf),0,1))
-p=rbind(oldW,oldNW,newW,newNW)
-p=p[,3:1]
-colnames(p)=c("Rem","Know","New")
-rownames(p)=c("oldW","oldNW","newW","newNW")
-return(p)
-}
-
-error=function(par,dat){
-	p=pred(par) 
-	return(sum ((qnorm(p)-qnorm(dat))^2))
-	}
-
-par=c(1,1,1,1.5,1,1.5)
-
-error(par,dat)
-g=optim(par,error,dat=dat)
-h=nlm(error,g$par,dat=dat)
-g=optim(h$estimate,error,dat=dat)
-
-print(pred(g$par))
-```
-
-
-
-## Analysis scripts (optional)
-<!-- The purpose of a fully commented analysis script is to unambiguously provide the responses to all of the questions raised in the analysis section. This step is not common, but we encourage you to try creating an analysis script, refine it using a modeled dataset, and use it in place of your written analysis plan.
-
-Upload an analysis script with clear comments. This optional step is helpful in order to create a process that is completely transparent and increase the likelihood that your analysis can be replicated. We recommend that you run the code on a simulated dataset in order to check that it will run without errors. -->
-
-Let `dat` be a $3\times IJ$ matrix of response frequencies for remember, know and new responses per condition and person. Let `cond` be a vector of length $IJ$ denoting the condition $j$ for each column in `dat`. Likewise, let `sub` be a vector of length $IJ$ denoting the participant $i$ for each column in `dat`.
-
-```{r, eval = F}
-library("knitr")
-library('BayesFactor')
-
-make_y <- function(dat){ 
-  #vector of 3 values
-  #, first = number of remember responses
-  #, second = number of know responses
-  #, third = number of new responses
-  if(!is.vector(dat)){return("data not in the right format")}
-  if(length(dat)!=3){
-    return("please submit vector with #remember
-           , #know and #new responses")}
-  
-  p_r <- (dat[1] + 1/3)/(sum(dat) + 1)
-  p_k <- (dat[2] + 1/3)/(sum(dat) + 1)
-  p <- (dat[1] + 1/3)/(sum(dat) + 1)
-  
-  # (dat[1] + 1/2)/(sum(dat[1:2]) + 1)
-  
-  # log(p_r/p_k)
-  # log(p/(1 - p))
-  # qnorm(p_r)- qnorm(p_k)
-  (dat[1] - dat[2])/sum(dat)
-  
-  # p_r/(p_r + p_k)
-}
-
-y <- apply(dat, 2, make_y)
-
-###Design matrices
-
-#Mu
-X_u <- matrix(0, nrow = length(y), ncol = 4)
-for(i in 1:length(y)){
-  X_u[i, cond[i]] <- 1
-}
-
-#M0
-X_star <- X_u[, 1:3]
-X_star[,3] <- X_u[,3] + X_u[,4]
-
-#M_A1
-X_A1 <- X_star[, 2:3]
-X_A1[,1] <- X_star[,1] + X_star[,2]
-
-#No design matrices for the other two models are needed
-#, since they have the same design matrix as M_u
-
-###Estimation & Bayes factors for raw models using bayesfactor package
-
-#Mu
-gMap <- rep(0, 4)
-samples_u <- nWayAOV(y, X_u, gMap, rscale = 2/3
-                     , posterior = T, iterations = 100000)
-out_u <- nWayAOV(y, X_u, gMap, rscale = 2/3)
-
-#M0
-gMap <- rep(0, 3)
-samples_star <- nWayAOV(y, X_star, gMap, rscale = 2/3
-                        , posterior = T, iterations = 100000)
-out_star <- nWayAOV(y, X_star, gMap, rscale = 2/3)
-
-#MA1
-gMap <- rep(0, 2)
-# samples_A1 <- nWayAOV(y, X_A1, gMap, rscale = 1, posterior = T)
-out_A1 <- nWayAOV(y, X_A1, gMap, rscale = 2/3)
-
-###Bayes factor computation using encompassing approach Haaf&Rouder
-
-#M0
-est.star <- samples_star[,1] + samples_star[, 2:4]
-colMeans(est.star)
-
-##Posterior prob of mu1> mu2
-# star <- est.star[,1] > 0 & est.star[,2] < 0
-star <- est.star[,1] > est.star[,2]
-post.prob.star <- mean(star)
-
-##Prior prob of mu1 > mu2
-R <- 100000
-mu.theta.sd <- .5
-mu1 <- rnorm(R, 0, mu.theta.sd)
-mu2 <- rnorm(R, 0, mu.theta.sd)
-# priorstar <- mu1 > 0 & mu2 < 0
-priorstar <- mu1 > mu2
-prior.prob.star <- mean(priorstar)
-
-#MA2
-est.u <- samples_u[,1] + samples_u[, 2:5]
-colMeans(est.u)
-
-##Posterior
-a2 <- est.u[,1] > est.u[,2] & est.u[,3] > est.u[,4]
-post.prob.a2 <- mean(a2)
-
-##Prior prob
-mu1 <- rnorm(R, 0, mu.theta.sd)
-mu2 <- rnorm(R, 0, mu.theta.sd)
-mu3 <- rnorm(R, 0, mu.theta.sd)
-mu4 <- rnorm(R, 0, mu.theta.sd)
-priora2 <- mu1 > mu2 & mu3 > mu4
-prior.prob.a2 <- mean(priora2)
-
-#MA3
-##Posterior
-a3 <- est.u[,1] < est.u[,2] & est.u[,3] < est.u[,4]
-post.prob.a3 <- mean(a3)
-
-##Prior prob
-priora3 <- mu1 < mu2 & mu3 < mu4
-prior.prob.a3 <- mean(priora3)
-
-#MA4
-##Posterior
-a4 <- est.u[,1] > est.u[,2] & est.u[,3] < est.u[,4]
-post.prob.a4 <- mean(a4)
-
-##Prior prob
-priora4 <- mu1 > mu2 & mu3 < mu4
-prior.prob.a4 <- mean(priora4)
-
-#bfs everything compared to M0
-bf.starbase <- log(post.prob.star / prior.prob.star) + out_star$bf
-bf.a2base <- log(post.prob.a2 / prior.prob.a2) + out_u$bf
-bf.a3base <- log(post.prob.a3 / prior.prob.a3) + out_u$bf
-bf.a4base <- log(post.prob.a4 / prior.prob.a4) + out_u$bf
-(bf.staru <- exp(bf.starbase - out_u$bf))
-(bf.stara1 <- exp(bf.starbase - out_A1$bf))
-(bf.stara2 <- exp(bf.starbase - bf.a2base))
-(bf.stara3 <- exp(bf.starbase - bf.a3base))
-(bf.stara4 <- exp(bf.starbase - bf.a4base))
-```
-
-# Other
-
-## Other (Optional)
-<!-- If there is any additional information that you feel needs to be included in your preregistration, please enter it here. -->
-
-### Stimuli
-
-*Words*
-
-'BATH', 'BEEF', 'BIRD', 'BLUE', 'BOOK', 'CAKE', 'CALL', 'COAT', 'COLD', 'DATE', 'DOOR', 'FACE', 'FACT', 'FEET', 'GIRL', 'GOOD', 'HALF', 'HALL', 'HAND', 'HAVE', 'HEAD', 'HELP', 'HOLD', 'HOME', 'KISS', 'KNEE', 'LEFT', 'LIFE', 'LIKE', 'LINE', 'LOOK', 'MAKE', 'MIND', 'NOTE', 'PAGE', 'RAIN', 'REST', 'ROAD', 'ROOM', 'SALT', 'SEAT', 'SELF', 'SHOP', 'SKIN', 'SNOW', 'SOAP', 'SOFT', 'SONG', 'TALK', 'TIME', 'TREE', 'WALK', 'WANT', 'WARM', 'WASH', 'WIND', 'WORK', 'YEAR', 'GATE', 'CASH'
-
-*Non-Words*
-
-'WUIL', 'RILM', 'DENC', 'ZYSE', 'LODD', 'CHIE', 'SEFS', 'JAUK', 'GWIC', 'WONE', 'PLOK', 'DAPT', 'RETE', 'KLIB', 'SIME', 'LATT', 'SWAZ', 'DUFE', 'WONS', 'HEWF', 'MENC', 'ZUNK', 'COLV', 'CLOF', 'ABST', 'YOGG', 'DAUV', 'VEUL', 'HOAB', 'DOYS', 'SPIZ', 'NARN', 'ZELF', 'YAIL', 'CWEB', 'NOGE', 'WONC', 'DWEK', 'ZARC', 'GWUZ', 'NALN', 'HESP', 'JALT', 'UFTS', 'CWUL', 'KEPH', 'MYDE', 'SOTE', 'CHUR', 'FOMB', 'FOSK', 'TRUV', 'SNUZ', 'TASP', 'NAUC', 'VABB', 'ZEAM', 'TUCE', 'JOSP', 'LORT'
-
-### Remember/Know instructions
-
-*Now is the memory test for the words and non-words you studied before. You will see a single item at a time; some of these will be from the set you studied in the first part of the experiment (OLD), others will be ones you did not study (NEW). Please work carefully through each item, indicating for each one whether you recognize it from the first part of the study or not. If you recognize an item, please click the OLD button. If you do not recognize it, plase click the NEW button. Press SPACE to continue*
-
-*Additionally, as you make your decision about recognizing each word/ non-word, bear in mind the following: Often, when remembering a previous event or occurence, we consciously RECOLLECT and become aware of aspects of the previous experience. At other times, we simply KNOW that something has occurred before, but without being able consciously to recollect anything about its occurrence or what we experienced at the time. Press SPACE to continue*
-
-*Thus in addition to your indicating your recognition of a word/ non-word from the original study set, you will be asked to click 'R' to show that you recollect the item consciously, or click 'K' if you feel you simply know that the item was in the previous study set. So, for each item that you recognize as OLD, please click 'R' if you recollect its occurrence, or 'K' if you simply know that it was shown in the first part of the experiment. Press SPACE to begin*
-
----
-nocite: | 
-   @Haaf:Rouder:2017, @Rouder:Haaf:2018, @Coltheart:1981, @Gardiner:Java:1990, @Rastle:etal:2002
-...
-
 
 
 ## 
