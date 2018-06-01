@@ -28,4 +28,3 @@ for (fn in colnames(mc.data)[grepl("Frames", colnames(mc.data))]) {
   mc.data <- frames2ms(mc.data, fn)
 }
 
-mc.data
