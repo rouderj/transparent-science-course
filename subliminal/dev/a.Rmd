@@ -1,11 +1,12 @@
 ---
 title: "First Analysis"
 author: "Gabe & Jeff"
-output: pdf_document
+output: html_document
 ---
 # Loading Data
 
 ```{r load data, cache=TRUE}
+
 indat=read.csv(url('https://osf.io/28ahk/download'),head=T)
 dim(indat)
 
@@ -76,6 +77,18 @@ rt=as.data.frame.table(rtArray[,,2]-rtArray[,,1])
 colnames(rt)=c('sub','blk','effect')
 blocked=data.frame(prime,rt$effect)
 colnames(blocked)
+
+frames=cbind(
+  prime$frames_fmask1,
+  prime$frames_fmask2,
+  prime$frames_cue,
+  prime$frames_bmask1,
+  prime$frames_bmask2)/prime$refresh
+  blocked.temp=data.frame(prime,rt$effect)
+  cn=colnames(blocked.temp)
+  blocked=data.frame(blocked.temp,frames)
+  colnames(blocked)=c(cn,"dur_fmask1","dur_fmask2","dur_cue","dur_bmask1","dur_bmask2")
+
 ```
 
 
@@ -85,6 +98,7 @@ plot(blocked$acc,blocked$rt.effect,cex=.6)
 Q=length(blocked$acc)
 plot(blocked$acc+rnorm(Q,0,.01),blocked$rt.effect,cex=.6,pch=19,col=rgb(1,0,0,.05))
 abline(h=0)
+
 
 ```
 
@@ -97,8 +111,19 @@ plot(blocked$acc~blocked$cue_contrast)
 plot(lowess(blocked$cue_contrast,blocked$acc),typ='l',ylim=c(.4,1))
 plot(lowess(blocked$cue_contrast,blocked$rt.effect),typ='l',ylim=c(-.1,.1))
 
+r <- blocked$dur_cue / (blocked$dur_fmask1 + 
+                        blocked$dur_fmask2 + 
+                        blocked$dur_bmask1 + 
+                        blocked$dur_bmask2)
+
+bad=r==Inf
+plot(lowess(r[!bad],blocked$acc[!bad]),typ='l',ylim=c(.3,1))
+plot(lowess(r[!bad],blocked$rt.effect[!bad]),typ='l',ylim=c(0,1))
+
 boxplot(blocked$acc~blocked$frames_cue)
 boxplot(blocked$rt.effect~blocked$frames_cue)
+
+summary(lm(blocked$rt.effect[!bad]~r[!bad]))
 
 o=order(tapply(blocked$acc,blocked$subj,mean))
 subAcc=tapply(blocked$acc,blocked$subj,mean)[o]
@@ -106,7 +131,9 @@ subRT=tapply(blocked$rt.effect,blocked$subj,mean)[o]
 plot(subAcc)
 plot(subRT)
 plot(subAcc,subRT)
+
 ```
 
 Hey folks?  Is there anything else here beside subject effects?  Inquiring minds want to know.
+
 
