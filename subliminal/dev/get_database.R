@@ -11,3 +11,13 @@ gbt <- RMySQL::dbConnect(
   
 ## Prepare query
 mc.data <- RMySQL::dbReadTable(gbt, "MaskedCues")  
+
+frames2ms <- function(d = mc.data, framecol) {
+  d[,ncol(d)+1] <- d[,which(colnames(d)==framecol)] / d$RefreshRate
+  colnames(d)[ncol(d)] <- sprintf("MilliSec%s", substr(framecol, 7, 32))
+  d
+}
+
+for (fn in colnames(mc.data)[grepl("Frames", colnames(mc.data))]) {
+  mc.data <- frames2ms(mc.data, fn)
+}
