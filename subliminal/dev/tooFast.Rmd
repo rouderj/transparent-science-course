@@ -1,0 +1,111 @@
+---
+title: "First Analysis....Too Fast"
+author: "Jeff"
+output: html_document
+---
+LOADING THE DATA
+
+```{r load data, cache=TRUE}
+indat=read.csv(url('https://osf.io/28ahk/download'),head=T)
+dim(indat)
+
+primeID=indat[indat$phase==2,]
+dat=indat[indat$phase==1 ,]
+```
+
+
+What about all these fast RTs in the prime-identification task?  Do people speed and become less accurate?  Accordingly, faster RTs with lower accuracy.
+
+```{r}
+rt=tapply(primeID$rt,list(primeID$sub,primeID$blk),median)
+acc=tapply(primeID$acc,list(primeID$sub,primeID$blk),mean)
+plot(acc,rt,typ='p',pch=19,col=rgb(1,0,0,.1),cex=.6)
+Q=length(as.vector(acc))
+plot(acc+rnorm(Q,0,.01),rt,pch=19,col=rgb(1,0,0,.1),cex=.6,ylim=c(0,1))
+abline(lm(as.vector(rt)~as.vector(acc)))
+```
+```{r}
+bad1=primeID$rt>2
+mean(bad1)
+plot(ecdf(primeID$rt[!bad1]))
+```
+
+I am going to just apply the 2 second cutoff everywhere and let the chips fall where they may.
+
+How fast is this?  Really fast.
+
+```{r}
+#Rouder, 2010
+upper=2.5
+lower=0
+
+dat=read.table('~/git/ctx-inhibition/dev/rouder.2010.orientation.dat')
+colnames(dat)=c('sub','block','trial','trialB','cond','resp','rt','acc')
+#codes
+#resp: 0=left, 1=right
+#acc: 0=error, 1=correct
+#cond: 0 easiest left, 2 is hardest left, 3 hardest right, 5 easiest right
+
+
+#dat$mycond is ordered from easiest to hardest condition
+#mycond=easy(r,g), med(r,g), hard(r,g)
+dat$mycond=NA
+dat$mycond[dat$cond==5]=1
+dat$mycond[dat$cond==0]=2
+dat$mycond[dat$cond==4]=3
+dat$mycond[dat$cond==1]=4
+dat$mycond[dat$cond==3]=5
+dat$mycond[dat$cond==2]=6
+
+
+dat$sub=as.integer(as.factor(dat$sub))
+I=length(levels(as.factor(dat$sub))) #Number of Subs.
+
+
+#Wrong-button responses
+wrong.button=dat$resp>1
+error=dat$acc==0
+stop=wrong.button | dat$trialB==0 |error
+after.stop=c(0,stop)[1:length(stop)]
+a=dat$rt<lower
+b=dat$rt>upper
+dont.use=stop | after.stop |a |b
+clean=dat[!dont.use,]
+
+ct=clean[clean$block>2,]
+cond=rep(0,length(ct$cond))
+cond[ct$cond==0 | ct$cond==5]=1
+cond[ct$cond==2 | ct$cond==3]=2
+
+dat=data.frame(ct$sub[cond>0],cond[cond>0],ct$rt[cond>0])
+colnames(dat)=c('sub','cond','rt')
+
+plot(dat$rt[dat$cond==1])
+abline(h=.250)
+
+
+# Rouder, 2005
+indat=read.table(url('https://raw.githubusercontent.com/PerceptionCognitionLab/data0/master/lexDec-dist5/ld5.all'))
+colnames(indat)=c('sub','block','trial','stim','resp','rt','error')
+
+bad1=indat$sub%in%c(34,43)
+bad2=indat$rt<0 | indat$rt>2000
+bad3=indat$err==1
+bad4=indat$block==0 & indat$trial<20
+bad5=indat$trial==0
+
+bad=bad1 | bad2 | bad3 |bad4 |bad5
+tmp=indat[!bad,]
+cond=rep(0,length(tmp$stim))
+cond[tmp$stim==0 | tmp$stim==5]=1
+cond[tmp$stim==2 | tmp$stim==3]=2
+dat=data.frame(tmp$sub[cond>0],cond[cond>0],tmp$rt[cond>0])
+colnames(dat)=c('sub','cond','rt')
+dat$rt=dat$rt/1000
+plot(dat$rt[dat$cond==1])
+abline(h=.250)
+mean(indat$rt<200)
+```
+
+
+
