@@ -36,7 +36,7 @@ output: prereg::cos_prereg
 
 We aim to test whether the subliminal cue effect is robust to typical variation in experimental methods that might occur from labratory to labratory. Such variation typifies the sorts of generalizing to the real world. In general, is it the case that subliminal effects can substantively influence behavior?
 
-It may be the case that these effects are restricted to some subset of the space of possible experimental methods. For instance, it may require a particular mask and cue contrast, mask duration, interval duration, and/or mask symbols. We aim to test the finding from (Reuss et al. 2015) that such an effect exists by thoroughly running through the space of all possible experiments.
+It may be the case that these effects are restricted to some subset of the space of possible experimental methods. For instance, it may require a particular mask and cue contrast, mask duration, interval duration, and/or mask symbols. We aim to test the finding from (Reuss et al. 2015) that such an effect exists by thoroughly running through the space of all possible experiments and assessing when subliminal cues facilitate target identification.
 
 ## Experimental questions
 
