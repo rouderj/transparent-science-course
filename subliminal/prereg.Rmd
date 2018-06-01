@@ -35,73 +35,17 @@ We aim to test whether the subliminal cue effect is robust to typical variation 
 
 It may be the case that these effects are restricted to some subset of the space of possible experimental methods. For instance, it may require a particular mask and cue contrast, mask duration, interval duration, and/or mask symbols. We aim to test the finding from (Reuss et al. 2015) that such an effect exists by thoroughly running through the space of all possible experiments.
 
-## Models
+## Experimental questions
 
-Model 1: Evaluating for which parts of the experimental space there is a masked-cues-influence-behavior effect.
+Q1: When is there a masked-cues-influence-behavior effect?
 
-Model 2: Evaluating for which parts of the experimental space the masked cues are subliminal.
+Q2: When are masked cues are subliminal?
 
-# Sampling Plan
+We will explore the various co-variates in the design and how they impact Q1 and Q2. In particular, 
 
-Fifty undergraduate students participating for course credit. 
+## Data cleaning
 
-## Existing data
-
-**Registration prior to creation of data**. As of the date of submission of this research plan for preregistration, the data have not yet been collected, created, or realized.
-
-## Data collection procedures
-
-Undergraduate students will be recruited by the University of Missouri SONA system from the PSYCH 1000 course. Participants will be screened for normal or corrected to normal vision and will be fluent speakers of English. participants will be tested in the Perception and Cognition lab or Memory and Cognitive Aging lab at the University of Missouri.
-
-## Sample size
-We plan on asking each of 50 participants to judge 60 words and 60 non-words.  The total number of judgments is therefore `r 50*2*60`.  
-
-## Sample size rationale
-
-We think `r 50*2*60` judgments is a lot.  It is 5 times the number of judgments collected by Gardiner and Java in their Experiment 2.
-
-# Variables
-
-Manipulated
- - Stimulus type: word/ non-word
- - Probe type: old/ new
-
-Measured
- - Frequency of New, Old and Remember, Know responses
- - Reaction time
-
-
-# Design Plan
-
-2 $\times$ 2 within subjects
-
-## Study type
-
-**Experiment**. A researcher randomly assigns treatments to study subjects, this includes field or lab experiments. This is also known as an intervention experiment and includes randomized controlled trials.
-
-## Blinding
-
-This study is a massively repeated within-subjects design.  What does blinding even mean when participants are assigned to both conditions.
-
-## Study design
-<!-- Describe your study design. Examples include two-group, factorial, randomized block, and repeated measures. Is it a between (unpaired), within-subject (paired), or mixed design? Describe any counterbalancing required. Typical study designs for observation studies include cohort, cross sectional, and case-control studies. -->
-
-Repeated measures
-
-### Stimuli
-
-Sixty high familiarity concrete nouns with 1 syllable and 4 letters were taken from the MRC psycholinguistics database (Coltheart, 1981). Sixty non-words with 4 letters and 2-4 phonemes were selected from the ARC non-word database (Rastle et al., 2002). For each participant 30 words and 30 non-words are chosen at random to form the study set. Words and non-words are randomly intermixed. All 60 words and 60 non-words are presented at test in a random order. The words and non-words used in this study are copied below at the end of this document. Items are presented at the center of the screen in the Lucida Console font with a height of 2$^{\circ}$ of visual angle at an approximate viewing distance of 50 cm.
-
-During the recognition test participants are presented with a single item in the center of the screen and two buttons (either labeled OLD and NEW or R and K, see below) that they can click on to respond. The buttons are circular with a radius of 2$^{\circ}$ and are presented $5^{\circ}$ below and $5^{\circ}$ to the left and right of the center of the screen.
-
-### Procedure
-
-Participants study 60 items (30 words and 30 non-words) in a randomly determined order. Each item appears on screen for 2 seconds followed by a 0.5 second inter-stimulus-interval. Following the study phase participants are given a 'spot-the-difference' task to complete for 10 minutes before moving on to the recognition test. During the recognition test participants are presented with items one at a time that they must first characterize as OLD or NEW using the mouse to click on labeled buttons on screen. Following an OLD response participants then make an additional characterization by clicking on buttons labeled R (for 'remembered') or K (for 'known'). Prior to the recognition test participants are instructed on the use of the R/K classification in a similar manner to the instruction used in Gardiner and Java (1990). These instructions are copied below in the final section of this document.
-
-## Randomization
-<!-- If you are doing a randomized study, how will you randomize, and at what level? -->
-
-Order of presentation of word/ non-words is randomized. Whether a given word/ non-word is old or new is also determined randomly per person.
+Remove timings less then 250 milliseconds
 
 # Analysis Plan
 <!-- You may describe one or more confirmatory analysis in this section. Remember, all analyses specified in this section must be reported in the final article, and any additional analyses must be clearly labeled as exploratory or hypothesis generating in the final paper. A confirmatory analysis plan must state up front which variables are predictors (independent) and which are the outcomes (dependent), otherwise it is an exploratory analysis.
@@ -113,9 +57,6 @@ To help you keep track of multiple analyses, you may label each for your referen
 We intend to use the Bayes factor approach to assessing equalities and inequalities as described in Haaf & Rouder (in press) and Rouder & Haaf (submitted). 
 
 The key specifications that are needed are the scale on effect sizes.  We think a guess for $\sigma^2$ is somewhere around .3, and if effects are .2, then effect sizes should be around .67.  This value will be used to set our scales along the arguments of Haaf and Rouder (in press).  
-
-## Statistical models
-Defined above.
 
 ## Transformations
 <!-- If you plan on transforming, centering, recoding the data, or will require a coding scheme for categorical variables, please describe that process. -->
