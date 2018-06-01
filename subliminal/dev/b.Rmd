@@ -1,0 +1,122 @@
+---
+title: "First Analysis"
+author: "Gabe & Jeff"
+output: pdf_document
+---
+# Loading Data
+
+```{r load data, cache=TRUE}
+indat=read.csv(url('https://osf.io/28ahk/download'),head=T)
+dim(indat)
+
+indat=indat[indat$cond_mask==1,]
+
+#indat$sub=as.integer(as.factor(indat$sub))
+
+primeIDa=indat[indat$phase==2 ,]
+targIDa=indat[indat$phase==1 ,]
+```
+
+
+# Fast RTs?
+
+What about all these fast RTs in the prime-identification task?  Do people speed and become less accurate.  Accordingly, faster RTs with lower accuracy.
+
+```{r}
+rt=tapply(primeIDa$rt,list(primeIDa$subj,primeIDa$blk),median)
+acc=tapply(primeIDa$acc,list(primeIDa$subj,primeIDa$blk),mean)
+plot(acc,rt,typ='p',pch=19,col=rgb(1,0,0,.5),cex=.6)
+Q=length(as.vector(acc))
+plot(acc+rnorm(Q,0,.005),rt,pch=19,col=rgb(1,0,0,.1),cex=.6,ylim=c(0,1))
+abline(h=.1)
+abline(lm(rt~acc))
+```
+Joachim, what are those half amounts?,  Look at Block 7 in Subject 50038.  By the way, you used the same subject #'s twice a few times.  Seriously.  Site 50,000 is incompetent.
+
+```{r}
+table(indat$subj)
+```
+
+# Cleaning
+
+1. Take out RT>2 sec in all phases
+2. Take out first trial of every block
+3. Take out first block
+4. Take out subjects 50017, 50026, 50038, 50040, 50041
+
+```{r}
+before.clean=dim(indat)[1]
+bad1= indat$rt>2
+mean(bad1)
+bad2= indat$trl==1
+mean(bad2) # 1/32
+bad3=(indat$blk==1)
+mean(bad3)
+bad4=indat$subj %in% c(50017,50026,50038,50040,50041)
+bad=(bad1 | bad2 | bad3 | bad4)
+dat=indat[!bad,]
+after.clean=dim(dat)[1]
+print(c(before.clean,after.clean,after.clean/before.clean))
+```  
+
+
+
+
+# Analysis 1
+
+Let's make a new data set that is just RT median and accuracy for all blocks
+
+```{r}
+primeID=dat[dat$phase==2,]
+targID=dat[dat$phase==1,]
+
+prime=aggregate(primeID,by=list(primeID$sub,primeID$blk),FUN=mean)
+rtArray=tapply(targID$rt,list(targID$sub,targID$blk,targID$cond_spdAcc),mean)
+rt=as.data.frame.table(rtArray[,,2]-rtArray[,,1])
+colnames(rt)=c('sub','blk','effect')
+
+frames=cbind(
+  prime$frames_fmask1,
+  prime$frames_fmask2,
+  prime$frames_cue,
+  prime$frames_bmask1,
+  prime$frames_bmask2)/prime$refresh
+  blocked.temp=data.frame(prime,rt$effect)
+  cn=colnames(blocked.temp)
+  blocked=data.frame(blocked.temp,frames)
+  colnames(blocked)=c(cn,"dur_fmask1","dur_fmask2","dur_cue","dur_bmask1","dur_bmask2")
+  
+```
+
+
+What is overall effect?
+```{r}
+plot(blocked$acc,blocked$rt.effect,cex=.6)
+Q=length(blocked$acc)
+plot(blocked$acc+rnorm(Q,0,.01),blocked$rt.effect,cex=.6,pch=19,col=rgb(1,0,0,.05))
+abline(h=0)
+
+```
+
+Simple effect of some variables
+
+```{r}
+boxplot(blocked$acc~blocked$cue_hue)
+boxplot(blocked$rt.effect~blocked$cue_hue)
+plot(blocked$acc~blocked$cue_contrast)
+plot(lowess(blocked$cue_contrast,blocked$acc),typ='l',ylim=c(.4,1))
+plot(lowess(blocked$cue_contrast,blocked$rt.effect),typ='l',ylim=c(-.1,.1))
+
+boxplot(blocked$acc~blocked$frames_cue)
+boxplot(blocked$rt.effect~blocked$frames_cue)
+
+o=order(tapply(blocked$acc,blocked$subj,mean))
+subAcc=tapply(blocked$acc,blocked$subj,mean)[o]
+subRT=tapply(blocked$rt.effect,blocked$subj,mean)[o]
+plot(subAcc)
+plot(subRT)
+plot(subAcc,subRT)
+```
+
+Hey folks?  Is there anything else here beside subject effects?  Inquiring minds want to know.
+
