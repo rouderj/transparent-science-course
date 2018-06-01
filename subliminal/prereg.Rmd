@@ -14,7 +14,10 @@ author:
     affiliation : 1
   - name        : Jeffrey Rouder
     affiliation : 1
-  
+  - name        : Colin Kuptiz
+    affiliation : 1
+  - name        : Alexander Etz
+    affiliation : 1
 
 affiliation:
   - id          : 1
@@ -47,10 +50,7 @@ We will explore the various co-variates in the design and how they impact Q1 and
 
 ## Data cleaning
 
-Remove timings less then 250 milliseconds
-Remove timings greater than 2,000 milliseconds
-Take out the first trial of every block
-Take out the first block
+In order to ensure that participants are indeed performing the task as specified, we will remove timings less then 250 milliseconds or greater than 2,000 milliseconds. Additionally, because there are likely substantial difference as participants acclimate to the task, we will remove the first trial of each block and the first block.
 
 # Analysis Plan
 <!-- You may describe one or more confirmatory analysis in this section. Remember, all analyses specified in this section must be reported in the final article, and any additional analyses must be clearly labeled as exploratory or hypothesis generating in the final paper. A confirmatory analysis plan must state up front which variables are predictors (independent) and which are the outcomes (dependent), otherwise it is an exploratory analysis.
@@ -63,10 +63,10 @@ In order to assess whether a covariate impacts reaction times, we will compute B
 
 In order to assess whether the mask is subliminal or explicit, we compare a null model in which the probability of correctly identifying the masked cue is exactly 50% to an alternative model in which the probability of correctly identifying the masked cue is distributed according to a Beta distribution with rate alpha and scale beta. We use the prior alpha=beta=1 and report the Bayes factor associated with the priors given the data.
 
-<!-- The key specifications that are needed are the scale on effect sizes.  We think a guess for $\sigma^2$ is somewhere around .3, and if effects are .2, then effect sizes should be around .67.  This value will be used to set our scales along the arguments of Haaf and Rouder (in press).   --!>
-
 ## Transformations
 <!-- If you plan on transforming, centering, recoding the data, or will require a coding scheme for categorical variables, please describe that process. -->
+
+Since the data associated with stimulus presentation are measured in frames while reactino times are measured in milliseconds, we will convert stimulus presentation to milliseconds in order to standardize the units across the dataset. To do this, the milliseconds (ms) are computed from frames (f) and refresh rate (Hz) via the equation ms = f*1000/Hz.
 
 ## Inference criteria
 <!-- What criteria will you use to make inferences? Please describe the information you'll use (e.g. p-values, Bayes factors, specific model fit indices), as well as cut-off criterion, where appropriate. Will you be using one or two tailed tests for each of your analyses? If you are comparing multiple conditions or testing multiple hypotheses, will you account for this? -->
