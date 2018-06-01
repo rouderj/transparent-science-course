@@ -14,6 +14,8 @@ library(DBI)
 
 # load("mc.Rdata")
 
+# url paper https://osf.io/g84py/
+
 mc.data <- read.csv(url("https://osf.io/wa34r/download"))
 
 frames2ms <- function(d = mc.data, framecol) {
