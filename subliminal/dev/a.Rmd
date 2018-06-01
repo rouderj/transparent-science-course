@@ -140,7 +140,7 @@ Hey folks?  Is there anything else here beside subject effects?  Inquiring minds
 =======
 ```{r}
 
-source("get_database.R"")
+source("get_database.R")
 ```
 
 
