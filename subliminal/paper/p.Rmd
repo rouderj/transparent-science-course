@@ -1,29 +1,30 @@
 ---
-title             : "Great Title"
-shorttitle        : "Big Short"
+title           : "Robustness of the subliminal cue effect: A planned preregistered meta-analysis"
+shorttitle      : "subliminal cues - rubust or not (interrobang)"
+date            : "`r Sys.setlocale('LC_TIME', 'C'); format(Sys.time(), '%d\\\\. %B %Y')`"
 
 author: 
-  - name          : "Jeffrey N. Rouder"
-    affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
-    address       : ""
-    email         : "jrouder@uci.edu"
-  - name          : "Julia M. Haaf"
-    affiliation   : "2"
-
+  - name        : Stephen Bennett
+    affiliation : 1
+  - name        : Gabriel Estrella
+    affiliation : 1
+  - name        : Mac Strelioff
+    affiliation : 1
+  - name        : Joachim Vandekerckhove
+    affiliation : 1
+  - name        : Jeffrey Rouder
+    affiliation : 1
+  
 
 affiliation:
-  - id            : "1"
-    institution   : "University of California, Irvine"
-
-
-
+  - id          : 1
+    institution : University of California, Irvine
+    
 author_note: We are indebted to Joachim for being such a great gopher.
 
 note: Version 1, 5/2018
 
 abstract: "Hmmm"
-
 
   
 keywords          : "Are just words"
@@ -34,7 +35,7 @@ header-includes   :
    - \usepackage{bm}
    - \usepackage{amsmath}
    - \usepackage{setspace}
-   - \usepackage{pcl}
+#   - \usepackage{pcl}
 
 figsintext        : no
 figurelist        : no
@@ -45,7 +46,70 @@ lineno            : no
 lang              : "english"
 class             : "man"
 output            : papaja::apa6_pdf
+#output: prereg::cos_prereg
 csl               : apa6.csl
 ---
 
+
 Hi Class
+
+
+
+
+
+```{r}
+library(papaja)
+
+```
+
+Tasks: 
+1) prime identification: respond v or b, which are either correct or incorrect
+
+2) experiment -- 
+
+
+
+Cleaning; 
+
+# Introduction
+
+
+
+# Methods
+
+
+
+
+# Analyses
+
+
+
+
+# Results
+
+
+
+
+# Discussion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
