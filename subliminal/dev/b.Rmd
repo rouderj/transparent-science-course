@@ -98,8 +98,6 @@ plot(blocked$acc,blocked$rt.effect,cex=.6)
 Q=length(blocked$acc)
 plot(blocked$acc+rnorm(Q,0,.01),blocked$rt.effect,cex=.6,pch=19,col=rgb(1,0,0,.05))
 abline(h=0)
-
-
 ```
 
 Simple effect of some variables
@@ -133,6 +131,14 @@ plot(subRT)
 plot(subAcc,subRT)
 
 ```
+
+```{r}
+plot(blocked$acc,blocked$rt.effect,cex=.6)
+Q=length(blocked$acc[!bad])
+plot(blocked$acc[!bad]+rnorm(Q,0,.01),blocked$rt.effect[!bad],cex=1,pch=19,col=rgb(punif(r[!bad],0,2),1-punif(r[!bad],0,2),0,.5))
+abline(h=0)
+```
+
 
 Hey folks?  Is there anything else here beside subject effects?  Inquiring minds want to know.
 
