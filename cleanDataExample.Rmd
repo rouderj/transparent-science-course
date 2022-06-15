@@ -1,0 +1,205 @@
+---
+title: "Workshop 1: Cleaning Data Example"
+author: Jeff Rouder & Julia Haaf
+date: June 15, 2022
+output: pdf_document
+---
+
+Lexical Distance Effect:  Are digits stored in an analog fashion.  If so, it might be harder to say 4 is less than 5 than 2 is less than 5.  If they are stored propositionally, then maybe the distance from 5 wouldn't matter.  
+
+We are going to analyze a set of data at https://github.com/PerceptionCognitionLab/data0/tree/master/lexDec-dist5
+
+
+# Loading Data
+
+Let's read in the data from the web.  I am going to use read.table().  Function read.table() is for text files; function read.csv() is for csv files.  R has other capabilities too including reading form databases, excel, SPSS, and SAS.  
+
+The following line reads data from the web and assigns it as a data.frame to indat
+
+```{r}
+indat <- read.table(url('https://raw.githubusercontent.com/PerceptionCognitionLab/data0/master/lexDec-dist5/ld5.all'))
+```
+
+We can check that indat is a data.frame.  Data.frames are the main object for data.  Use them liberally.
+
+```{r}
+is.data.frame(indat)
+```
+
+We can see how big indat is
+```{r}
+dim(indat)
+```
+That is 19,440 rows and 7 columns
+
+What are the columns of indat?
+```{r}
+colnames(indat)
+```
+These are awkward.  Let's rename the columns by using the info https://github.com/PerceptionCognitionLab/data0/blob/master/lexDec-dist5/ld5.txt 
+
+```{r}
+colnames(indat)=c('sub','block','trial','stim','resp','rt','error')
+```
+
+and we can look at the first 10 data points
+```{r}
+indat[1:10,]
+```
+
+# Cleaning Data
+1. People should be very good at this task.  After all, how hard is it to say $2<5$ or $7>5$ ?
+
+2. RTs should not be less than 250 ms, that is just too fast.  They jumped the gun.
+
+3. RTs should not be greater than 2000 ms.  They sneezed, or texted, or had a brain fart.
+
+4. Errors.  We are not interested in the RTs for errors.  Who knows what happened?
+
+5. What about practice effects?  It takes some time to learn the keys.
+
+```{r}
+mean(indat$err)
+```
+
+How about by person?  Here is where we use tapply.  The function tapply is about as handy as it gets.  
+
+```{r}
+tapply(indat$err,indat$sub,mean)
+```
+
+Hmmm.  That is hard to read.  Let's sort the output from smallest to largest.
+```{r}
+sort(tapply(indat$err,indat$sub,mean))
+```
+
+Should we worry?
+
+
+Let's look at subject 34's response time data:
+```{r}
+rt34 <- indat$rt[indat$sub==34]
+plot(rt34)
+```
+
+Let's look at subject 15's data for comparison:
+```{r}
+rt15 <- indat$rt[indat$sub==15]
+plot(rt15)
+```
+What about 43?
+```{r}
+rt43 <- indat$rt[indat$sub==43]
+plot(rt43)
+```
+
+What about 3?
+```{r}
+rt3 <- indat$rt[indat$sub==3]
+plot(rt3)
+```
+
+Mark 34 and 43 for deletion
+```{r}
+bad1 <- indat$sub%in%c(34,43)
+```
+
+Mark too-fast RTs
+```{r}
+bad2 <- indat$rt<250
+mean(bad2)
+```
+
+Let's mark RTs over 2 sec for deletion
+```{r}
+bad3 <- indat$rt>2000
+mean(bad3)
+```
+Let's mark errors for deletion
+```{r}
+bad4 <- indat$err==1
+mean(bad4)
+```
+
+
+Let's look at learning.  How about mean RT per block.
+
+```{r}
+rtPerBlock <- tapply(indat$rt,indat$block,mean)
+plot(rtPerBlock)
+```
+First block is different.  Let's look at trials in the first block.
+```{r}
+include <- indat$block==0
+rtPerTrlB0 <- tapply(indat$rt[include],indat$trial[include],mean)
+plot(rtPerTrlB0)
+```
+
+OK, mark first 20 trials in block 0 for discard:
+```{r}
+bad5 <- indat$block==0 & indat$trial<20
+```
+
+Also, I find the first trial back from a break is slow.  Let's look at the remaining blocks:
+```{r}
+include <- indat$block>0
+rtPerTrlB0 <- tapply(indat$rt[include],indat$trial[include],mean)
+plot(rtPerTrlB0)
+```
+
+OK, get rid of first trial back from break.
+```{r}
+bad6 <- indat$trial==0
+```
+
+Now, let's include all bad trials and make a new data set without them:
+
+```{r}
+bad=bad1 | bad2 | bad3 |bad4 |bad5 | bad6
+dat=indat[!bad,]
+dim(dat)
+```
+
+
+Wow!  We can keep a document like this that documents our decisions.
+
+Here is the short version I might include with any analysis:
+```{r}
+cleanLD5=function()
+{
+indat=read.table(url('https://raw.githubusercontent.com/PerceptionCognitionLab/data0/master/lexDec-dist5/ld5.all'))
+colnames(indat)=c('sub','block','trial','stim','resp','rt','error')
+
+bad1=indat$sub%in%c(34,43)
+bad2=indat$rt<250 | indat$rt>2000
+bad3=indat$err==1
+bad4=indat$block==0 & indat$trial<20
+bad5=indat$trial==0
+bad=bad1 | bad2 | bad3 |bad4 |bad5
+dat=indat[!bad,]
+return(dat)
+}
+```
+
+# Analyzing Data
+
+```{r}
+dat=cleanLD5()
+```
+
+Let's make a quick figure.
+```{r}
+mrt=tapply(dat$rt,dat$stim,mean)
+stimVal=c(2:4,6:8)
+plot(stimVal,mrt)
+lines(stimVal,mrt)
+```
+
+A little cleaner:
+```{r means,fig.cap="This is a really nice figure."}
+plot(stimVal,mrt,typ='n',ylab="Response Time (ms)",xlab="Digit",ylim=c(575,650))
+lines(stimVal[1:3],mrt[1:3])
+lines(stimVal[4:6],mrt[4:6])
+points(stimVal,mrt,pch=21,bg='green',cex=1.2)
+abline(v=5,lty=2)
+```
